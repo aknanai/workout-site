@@ -1,0 +1,37 @@
+baseURL = 'https://example.github.io/workout-site/'
+languageCode = 'en-us'
+title = 'FitLife - Your Fitness Journey'
+theme = 'workout-theme'
+
+[params]
+  description = "Transform your body and mind with our comprehensive workout programs and expert fitness guidance."
+  tagline = "Train Smarter. Live Better."
+  heroImage = "/images/hero-bg.jpg"
+
+[params.social]
+  instagram = "#"
+  twitter = "#"
+  youtube = "#"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Programs"
+    url = "/programs/"
+    weight = 2
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

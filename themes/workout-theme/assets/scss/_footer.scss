@@ -1,0 +1,116 @@
+// Footer Styles
+.footer {
+    background: $color-primary;
+    color: $color-white;
+    padding: $spacing-3xl 0 $spacing-xl;
+
+    &__container {
+        max-width: $container-max-width;
+        margin: 0 auto;
+        padding: 0 $container-padding;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: $spacing-3xl;
+        margin-bottom: $spacing-3xl;
+
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+            gap: $spacing-2xl;
+        }
+    }
+
+    &__brand {
+        max-width: 300px;
+    }
+
+    &__logo {
+        font-size: $font-size-2xl;
+        font-weight: $font-weight-bold;
+        color: $color-white;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: $spacing-md;
+    }
+
+    &__tagline {
+        font-size: $font-size-base;
+        color: rgba($color-white, 0.7);
+        line-height: 1.6;
+    }
+
+    &__title {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $color-accent;
+        margin-bottom: $spacing-lg;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: $spacing-sm;
+        }
+
+        a {
+            color: rgba($color-white, 0.7);
+            text-decoration: none;
+            font-size: $font-size-base;
+            transition: $transition;
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+    }
+
+    &__bottom {
+        padding-top: $spacing-xl;
+        border-top: 1px solid rgba($color-white, 0.1);
+        text-align: center;
+
+        p {
+            font-size: $font-size-sm;
+            color: rgba($color-white, 0.5);
+            margin: 0;
+        }
+    }
+}
+
+// Social Icons
+.social {
+    &__icons {
+        display: flex;
+        gap: $spacing-md;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        border-radius: $border-radius-full;
+        background: rgba($color-white, 0.1);
+        color: $color-white;
+        transition: $transition;
+
+        &:hover {
+            background: $color-accent;
+            color: $color-primary;
+            transform: translateY(-2px);
+        }
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+name = "Workout Theme"
+license = "MIT"
+licenselink = "https://github.com/yourname/workout-theme/blob/master/LICENSE"
+description = "A modern fitness website theme inspired by Yoga Alliance"
+homepage = "https://github.com/yourname/workout-theme"
+tags = ["fitness", "workout", "modern", "responsive"]
+features = ["responsive", "scss", "mobile-first"]
+min_version = "0.121.0"
+
+[author]
+  name = "Your Name"
+  homepage = "https://example.com"

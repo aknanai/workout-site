@@ -1,0 +1,54 @@
+{{ define "main" }}
+<article class="article article--blog">
+    <header class="article__header">
+        <div class="container">
+            <time class="article__date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "January 2, 2006" }}
+            </time>
+            <h1 class="article__title">{{ .Title }}</h1>
+            {{ with .Params.subtitle }}
+            <p class="article__subtitle">{{ . }}</p>
+            {{ end }}
+            {{ with .Params.author }}
+            <div class="article__author">
+                <span>By {{ . }}</span>
+            </div>
+            {{ end }}
+        </div>
+    </header>
+
+    {{ if .Params.image }}
+    <div class="article__featured-image">
+        <div class="container">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="article__content">
+        <div class="container container--narrow">
+            {{ .Content }}
+        </div>
+    </div>
+
+    <!-- Related Posts -->
+    <section class="related">
+        <div class="container">
+            <h2 class="related__title">Related Articles</h2>
+            <div class="cards-grid cards-grid--3">
+                {{ range first 3 (where (where .Site.RegularPages "Section" "posts") ".Permalink" "!=" .Permalink) }}
+                <article class="card card--blog">
+                    <div class="card__content">
+                        <time class="card__date" datetime="{{ .Date.Format "2006-01-02" }}">
+                            {{ .Date.Format "January 2, 2006" }}
+                        </time>
+                        <h3 class="card__title">{{ .Title }}</h3>
+                        <a href="{{ .Permalink }}" class="card__link">Read More</a>
+                    </div>
+                </article>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+</article>
+{{ end }}

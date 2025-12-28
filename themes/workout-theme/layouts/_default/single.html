@@ -1,0 +1,55 @@
+{{ define "main" }}
+<article class="article">
+    <header class="article__header">
+        <div class="container">
+            {{ with .Params.category }}
+            <span class="article__category">{{ . }}</span>
+            {{ end }}
+            <h1 class="article__title">{{ .Title }}</h1>
+            {{ with .Params.subtitle }}
+            <p class="article__subtitle">{{ . }}</p>
+            {{ end }}
+            <div class="article__meta">
+                <time class="article__date" datetime="{{ .Date.Format "2006-01-02" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+                {{ with .Params.duration }}
+                <span class="article__duration">{{ . }}</span>
+                {{ end }}
+            </div>
+        </div>
+    </header>
+
+    {{ if .Params.image }}
+    <div class="article__image">
+        <img src="{{ .Params.image }}" alt="{{ .Title }}">
+    </div>
+    {{ end }}
+
+    <div class="article__content">
+        <div class="container container--narrow">
+            {{ .Content }}
+        </div>
+    </div>
+
+    {{ if .Params.related }}
+    <section class="related">
+        <div class="container">
+            <h2 class="related__title">You May Also Like</h2>
+            <div class="cards-grid cards-grid--3">
+                {{ range first 3 (where .Site.RegularPages "Section" .Section) }}
+                {{ if ne .Permalink $.Permalink }}
+                <article class="card">
+                    <div class="card__content">
+                        <h3 class="card__title">{{ .Title }}</h3>
+                        <a href="{{ .Permalink }}" class="card__link">View</a>
+                    </div>
+                </article>
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    {{ end }}
+</article>
+{{ end }}

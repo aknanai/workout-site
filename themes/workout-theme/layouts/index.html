@@ -1,0 +1,88 @@
+{{ define "main" }}
+{{ partial "hero.html" . }}
+
+<!-- Featured Programs Section -->
+<section class="section section--light">
+    <div class="container">
+        <div class="section__header">
+            <h2 class="section__title">Our Programs</h2>
+            <p class="section__subtitle">Choose the workout that fits your goals</p>
+        </div>
+        <div class="cards-grid">
+            {{ range first 4 (where .Site.RegularPages "Section" "programs") }}
+            <article class="card">
+                <div class="card__image">
+                    {{ if .Params.image }}
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                    {{ else }}
+                    <div class="card__placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    </div>
+                    {{ end }}
+                </div>
+                <div class="card__content">
+                    <span class="card__category">{{ .Params.category | default "Program" }}</span>
+                    <h3 class="card__title">{{ .Title }}</h3>
+                    <p class="card__description">{{ .Summary | truncate 100 }}</p>
+                    <a href="{{ .Permalink }}" class="card__link">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        <div class="section__cta">
+            <a href="/programs/" class="btn btn--outline">View All Programs</a>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Articles Section -->
+<section class="section section--primary">
+    <div class="container">
+        <div class="section__header section__header--light">
+            <h2 class="section__title">Latest Articles</h2>
+            <p class="section__subtitle">Tips, guides, and inspiration for your fitness journey</p>
+        </div>
+        <div class="cards-grid cards-grid--3">
+            {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+            <article class="card card--light">
+                <div class="card__image">
+                    {{ if .Params.image }}
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}" loading="lazy">
+                    {{ else }}
+                    <div class="card__placeholder card__placeholder--light">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                    </div>
+                    {{ end }}
+                </div>
+                <div class="card__content">
+                    <span class="card__date">{{ .Date.Format "January 2, 2006" }}</span>
+                    <h3 class="card__title">{{ .Title }}</h3>
+                    <p class="card__description">{{ .Summary | truncate 120 }}</p>
+                    <a href="{{ .Permalink }}" class="card__link">
+                        Read More
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        <div class="section__cta">
+            <a href="/posts/" class="btn btn--light">View All Articles</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section section--cta">
+    <div class="container">
+        <div class="cta__content">
+            <h2 class="cta__title">Ready to Start Your Fitness Journey?</h2>
+            <p class="cta__text">Join thousands who have transformed their lives through our programs</p>
+            <a href="/programs/" class="btn btn--primary btn--large">Get Started Today</a>
+        </div>
+    </div>
+</section>
+{{ end }}
