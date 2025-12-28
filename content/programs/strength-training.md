@@ -7,7 +7,7 @@ duration: "45-60 min"
 frequency: "4x per week"
 date: 2024-12-28
 draft: false
-image: "https://images.unsplash.com/photo-1581009146145-b5ef050c149a?w=800&q=80"
+image: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80"
 ---
 
 ## Program Overview
