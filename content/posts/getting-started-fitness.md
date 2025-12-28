@@ -4,6 +4,7 @@ subtitle: "Everything you need to know to begin your fitness journey"
 author: "FitLife Team"
 date: 2024-12-28
 draft: false
+image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&q=80"
 ---
 
 Starting a fitness journey can feel overwhelming, but it doesn't have to be. Whether your goal is to lose weight, build muscle, or simply feel better, this guide will help you take those important first steps.

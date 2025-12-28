@@ -8,11 +8,18 @@
     background: linear-gradient(135deg, $color-primary 0%, darken($color-primary, 10%) 100%);
     overflow: hidden;
 
+    &__background {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
     &__overlay {
         position: absolute;
         inset: 0;
-        background: url('/images/hero-pattern.svg') repeat;
-        opacity: 0.05;
+        background: linear-gradient(135deg, rgba($color-primary, 0.85) 0%, rgba(darken($color-primary, 15%), 0.9) 100%);
     }
 
     &__container {

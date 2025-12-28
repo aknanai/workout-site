@@ -4,6 +4,7 @@ subtitle: "Rest smarter to train harder"
 author: "FitLife Team"
 date: 2024-12-24
 draft: false
+image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80"
 ---
 
 Many people focus solely on their workouts, forgetting that recovery is where the real progress happens. Understanding and prioritizing recovery can transform your results.

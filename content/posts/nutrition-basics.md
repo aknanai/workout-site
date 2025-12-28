@@ -4,6 +4,7 @@ subtitle: "Fuel your workouts with the right foods"
 author: "FitLife Team"
 date: 2024-12-26
 draft: false
+image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80"
 ---
 
 What you eat is just as important as how you train. Understanding basic nutrition principles will help you maximize your workout results and feel your best.
